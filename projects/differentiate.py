@@ -2,20 +2,20 @@ import numpy as np
 
 
 def differentiate(u: np.ndarray, dt: float) -> np.ndarray:
-    d[0]=(u[0]+u[1])/dt
+    d = np.zeros_like(u)  # Initialize the output array
+    d[0]=(u[1]-u[0])/dt
     for j in range(1,len(u)):
         d[j]=(u[j+1]-u[j-1])/(dt)
-    #d[-1]=(u[-1]-u[-2])/dt
     return d
-    #raise NotImplementedError
 
 def differentiate_vector(u: np.ndarray, dt: float) -> np.ndarray:
+    d = np.zeros_like(u)  # Initialize the output array
     u_lag=u[:-1]
     u_forward=u[1:]
-    d[0]=(u[0]+u[1])/dt
-    d[1:]=(u_lag+u_forward)/dt
+    d[0]=(u[0]-u[1])/dt
+    d[1:]=(u_lag-u_forward)/dt
     return d
-    #raise NotImplementedError
+
 
 def test_differentiate():
     t = np.linspace(0, 1, 10)
