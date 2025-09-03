@@ -4,7 +4,7 @@ import numpy as np
 def differentiate(u: np.ndarray, dt: float) -> np.ndarray:
     d = np.zeros_like(u)  # Initialize the output array
     d[0]=(u[1]-u[0])/dt
-    for j in range(1,len(u)):
+    for j in range(1,len(u)-1):
         d[j]=(u[j+1]-u[j-1])/(dt)
     return d
 
