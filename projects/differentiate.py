@@ -15,7 +15,7 @@ def differentiate_vector(u: np.ndarray, dt: float) -> np.ndarray:
     d=np.zeros(N)                      # Initialize the output array
     d[0]=(u[1]-u[0])/dt                # Set the first element with forward difference
     d[-1]=(u[-1]-u[-2])/dt            # Set last element with backward difference
-    d[1:-2]=(u[1:]-u[:-2])/dt/2        #    Compute with mid-points
+    d[1:-2]=(u[2:]-u[:-2])/dt/2        #    Compute with mid-points
     return d
 
 
