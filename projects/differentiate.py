@@ -5,7 +5,7 @@ def differentiate(u: np.ndarray, dt: float) -> np.ndarray:
     d = np.zeros_like(u)  # Initialize the output array
     d[0]=(u[1]-u[0])/dt
     for j in range(1,len(u)-1):
-        d[j]=(u[j+1]-u[j-1])/dt
+        d[j]=(u[j+1]-u[j])/dt
     return d
 
 def differentiate_vector(u: np.ndarray, dt: float) -> np.ndarray:
