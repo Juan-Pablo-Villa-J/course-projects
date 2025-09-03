@@ -5,7 +5,7 @@ from collections.abc import Callable
 def mesh_function(f: Callable[[float], float], t: np.ndarray) -> np.ndarray:
     out = np.zeros_like(t)
     for j in range(len(t)):
-        out[j]=f(t)
+        out[j]=f(t[j])
     return out
     #raise NotImplementedError
 
