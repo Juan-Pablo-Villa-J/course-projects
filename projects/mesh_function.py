@@ -3,9 +3,9 @@ from collections.abc import Callable
 
 
 def mesh_function(f: Callable[[float], float], t: np.ndarray) -> np.ndarray:
-    out = np.zeros_like(t)
-    for j in range(len(t)):
-        out[j]=f(t[j])
+    out = np.zeros(len(t))
+    for j, t_n in enumerate(t):
+        out[j]=f(t_n)
     return out
     #raise NotImplementedError
 
