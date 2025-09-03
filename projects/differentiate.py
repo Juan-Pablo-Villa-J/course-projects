@@ -10,8 +10,8 @@ def differentiate(u: np.ndarray, dt: float) -> np.ndarray:
 
 def differentiate_vector(u: np.ndarray, dt: float) -> np.ndarray:
     d = np.zeros_like(u)  # Initialize the output array
-    u_forward=u[:-1]
-    u_lag=u[1:]
+    u_lag=u[:-1]
+    u_forward=u[1:]
     d[0]=(u[1]-u[0])/dt
     d[1:]=(u_forward-u_lag)/dt
     return d
